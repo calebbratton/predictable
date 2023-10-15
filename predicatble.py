@@ -23,12 +23,9 @@ def add_target(team):
 
 df = df.groupby("team", group_keys=False).apply(add_target)
 
-df[df["team"] == "DEN"]
-
 df["target"][pd.isnull(df["target"])] = 2
 
 df["target"] = df["target"].astype(int, errors="ignore")
-df
 
 df["won"].value_counts()
 
