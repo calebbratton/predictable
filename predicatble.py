@@ -86,7 +86,7 @@ def backtest(data, model, predictors, start=2, step=1):
 predictions = backtest(df, rr, predictors)
 
 predictions = predictions[predictions["actual"] != 2]
-accuracy_score(predictions["actual"], predictions["prediction"])
+print(accuracy_score(predictions["actual"], predictions["prediction"]))
 
 df.groupby("home").apply(lambda x: x[x["won"] == 1].shape[0] / x.shape[0])
 
@@ -143,4 +143,4 @@ predictors = list(selected_columns[sfs.get_support()])
 
 predictions = backtest(full, rr, predictors)
 
-accuracy_score(predictions["actual"], predictions["prediction"])
+print(accuracy_score(predictions["actual"], predictions["prediction"]))
